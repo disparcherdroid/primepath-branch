@@ -25,6 +25,8 @@ form.addEventListener("submit", function (event) {
         return;
     }
 
-    message.textContent = "";
-    console.log(data);
+          saveRecord("registrations", data);
+
+    message.textContent = "Registered successfully, " + name + "!";
+    form.reset();
 });
