@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration | PrimePath Branch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Registration</h1>
+        <form id="registration-form">
+            <label for="full-name">Full name</label>
+            <input type="text" id="full-name" name="fullName" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+<label for="phone">Phone number</label>
+<input type="tel" id="phone" name="phone" required>
+
+<label for="service">Service</label>
+<select id="service" name="service" required>
+    <option value="">Choose a service</option>
+    <option value="branding development">Branding Development</option>
+    <option value="ui/ux design">UI/UX Design</option>
+    <option value="web applications">Web Applications</option>
+     <option value="full stack sites">Full Stack Sites</option>    
+     <option value="site management">Site Management</option>
+     <option value="e-commerce integration">E-Commerce Integration</option>
+     <option value="website development">Website Development</option>
+     <option value="non-code sites">Non-Code Sites</option>
+     <option value="website refurbishment">Website Refurbishment</option>
+</select>
+
+<label for="preferred-date">Preferred date</label>
+<input type="date" id="preferred-date" name="preferredDate" required>
+
+<label for="notes">Notes (optional)</label>
+<textarea id="notes" name="notes" rows="4"></textarea>
+            <button type="submit">Register</button>
+        </form>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
