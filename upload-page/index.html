@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration | PrimePath Branch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand-name">PrimePath Development</div>
+        <nav>
+            <a href="../" class="nav-link">Home</a>
+            <a href="../registration/" class="nav-link">Registration</a>
+            <a href="../admin-dashboard/" class="nav-link">Dashboard</a>
+        </nav>
+    </header>
+    <main class="reg-wrapper">
+        <h1 class="reg-header--h1">Upload</h1>
+        <div class="reg-wrapper-2">
+            <div class="reg-header">
+                <p class="reg-subtext">upload files here and feel free to upload anytime! There are no limits on how many and when you'll upload.</p>
+            </div>
+
+            <form id="registration-form" class="glass-card" data-form-type="upload">
+                <div class="form-group">
+                    <label for="full-name">Full name</label>
+                    <input type="text" id="full-name" name="fullName" placeholder="Juan Dela Cruz" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="juan@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="files">Files</label>
+                    <div class="file-picker">
+                        <input type="file" id="files" name="files" multiple required>
+                        <label for="files" class="file-picker-label">
+                            <span class="file-picker-icon" aria-hidden="true">↑</span>
+                            <span class="file-picker-title">Choose files</span>
+                            <span id="file-picker-help" class="file-picker-help">Select one or more files from your device</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Upload files</button>
+                <p id="form-message"></p>
+            </form>
+        </div>
+    </main>
+    <script src="../script.js"></script>
+</body>
+</html>

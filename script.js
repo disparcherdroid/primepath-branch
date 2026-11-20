@@ -2,10 +2,58 @@ console.log("script loaded");
 const form = document.getElementById("registration-form");
 const message = document.getElementById("form-message");
 const WEBHOOK_URL = 'https://n8n-pi1.primepath.digital/webhook-test/09dd2692-cb80-4779-9ee3-3592a8671cce';
+const fileInput = document.getElementById("files");
+const filePickerHelp = document.getElementById("file-picker-help");
+
+if (fileInput && filePickerHelp) fileInput.addEventListener("change", function () {
+    const fileCount = fileInput.files.length;
+    filePickerHelp.textContent = fileCount
+        ? fileCount + (fileCount === 1 ? " file selected" : " files selected")
+        : "Select one or more files from your device";
+});
 
 if (form && message) form.addEventListener("submit", async function (event) {
     event.preventDefault();
-    const data = Object.fromEntries(new FormData(form));
+    const formData = new FormData(form);
+
+    if (form.dataset.formType === "upload") {
+        const files = formData.getAll("files");
+
+        if (!files.length || !(files[0] instanceof File) || !files[0].name) {
+            message.style.color = "#f87171";
+            message.textContent = "Select at least one file to upload.";
+            return;
+        }
+
+        const submitButton = form.querySelector('button[type="submit"]');
+        if (submitButton) submitButton.disabled = true;
+        message.style.color = "#9ca3af";
+        message.textContent = "Uploading files...";
+
+        try {
+            const response = await fetch(WEBHOOK_URL, {
+                method: "POST",
+                body: formData,
+            });
+
+            if (!response.ok) {
+                throw new Error("Webhook returned HTTP " + response.status);
+            }
+
+            message.style.color = "#6ee7b7";
+            message.textContent = "Files uploaded successfully.";
+            form.reset();
+        } catch (error) {
+            console.error("File upload failed:", error);
+            message.style.color = "#f87171";
+            message.textContent = "Files could not be uploaded. Please try again.";
+        } finally {
+            if (submitButton) submitButton.disabled = false;
+        }
+        return;
+    }
+
+    const data = Object.fromEntries(formData);
     const name = data.fullName.trim();
 
     if (!/^[\p{L}][\p{L} .'-]+$/u.test(name)) {
