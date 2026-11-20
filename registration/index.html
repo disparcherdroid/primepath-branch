@@ -9,8 +9,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <header class="navbar">
-        <div class="brand-name">PrimePath Digital</div>
+    <header class="navbar flex items-center justify-between px-4 py-4 md:px-[8%] md:py-5">
+        <div class="brand-name">PrimePath Development</div>
         <nav>
             <a href="../" class="nav-link text-3xl">Home</a>
         </nav>
@@ -39,29 +39,23 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="service">Service</label>
-                    <select id="service" name="service" required>
-                        <option value="">Choose a service</option>
-                        <option value="branding development">Branding Development</option>
-                        <option value="ui/ux design">UI/UX Design</option>
-                        <option value="web applications">Web Applications</option>
-                        <option value="full stack sites">Full Stack Sites</option>
-                        <option value="site management">Site Management</option>
-                        <option value="e-commerce integration">E-Commerce Integration</option>
-                        <option value="website development">Website Development</option>
-                        <option value="non-code sites">Non-Code Sites</option>
-                        <option value="website refurbishment">Website Refurbishment</option>
-                    </select>
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" placeholder="Imus, Cavite" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="preferred-date">Preferred date</label>
-                    <input type="date" id="preferred-date" name="preferredDate" required>
+                    <label for="tup-id">TUP ID</label>
+                    <input type="text" id="tup-id" name="tupId" placeholder="TUPM-26-XXXX" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="notes">Notes (optional)</label>
-                    <textarea id="notes" name="notes" rows="4" placeholder="Project details or goals..."></textarea>
+                    <label for="degree-and-program">Degree and Program</label>
+                    <input type="text" id="degree-and-program" name="degreeAndProgram" placeholder="BS Electronics Engineering" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="year-and-section">Year and Section</label>
+                    <input type="text" id="year-and-section" name="yearAndSection" placeholder="1C" required>
                 </div>
 
                 <button type="submit" class="submit-btn">Register</button>
@@ -69,7 +63,6 @@
             </form>
         </div>
     </main>
-    <script src="storage.js"></script>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>
