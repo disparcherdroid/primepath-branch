@@ -2,7 +2,7 @@ console.log("script loaded");
 const form = document.getElementById("registration-form");
 const message = document.getElementById("form-message");
 
-form.addEventListener("submit", function (event) {
+if (form && message) form.addEventListener("submit", function (event) {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(form));
     const name = data.fullName.trim();

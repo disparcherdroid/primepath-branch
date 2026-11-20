@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PrimePath Development</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">    
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header class="navbar">
-        <div class="brand-name">PrimePath Development</div>
+<body class="min-h-[100dvh]">
+    <header class="navbar flex items-center justify-between sticky top-0 z-10 border-b border-emerald-400/10 bg-emerald-950/80 px-4 py-4 backdrop-blur-xl md:px-[8%] md:py-5">
+        <div class="brand-name text-base md:text-lg">PrimePath Development</div>
         <nav>
-            <a href="registration/" class="nav-link">Registration</a>
+            <a href="registration/" class="nav-link whitespace-nowrap text-sm">Registration</a>
         </nav>
     </header>
-    <main class="hero">
-        <h1>TAP-BIT</h1>
-        <p>Integrated platform of centralized systems for events, logistics, utilities and dynamic interactions.</p>
-        <a href="registration/" class="cta-btn">Get Started</a>
+    <main class="hero mx-auto max-w-[1000px] px-6 text-center sm:px-8 md:px-[8%]">
+        <h1 class="text-[clamp(4rem,14vw,10rem)] leading-[1.1] font-extrabold tracking-[-1.5px]">TAP-BIT</h1>
+        <p class="mx-auto mb-9 max-w-[580px] text-base leading-relaxed text-gray-400 sm:text-lg md:text-[1rem]">Integrated platform of centralized systems for events, logistics, utilities and dynamic interactions.</p>
+        <a href="registration/" class="cta-btn inline-block rounded-lg px-8 py-3.5 text-[0.95rem] font-semibold">Get Started</a>
     </main>
 </body>
 </html>
